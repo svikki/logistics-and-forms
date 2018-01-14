@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block body %}
+    {% if members %}
+    <form method="POST" action="update/{{ members.id }}">
+        {% else %}
+        <form class=""  action="create" method="POST">
+    {% endif %}
+        {% csrf_token %}
+        <div  class="row" > 
+<div  class="col-md-4" > <div id="div_id_Preventive_list" class="form-group"> <label for="id_Preventive_list" class="control-label  requiredField">Preventive list<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members.Preventive_list }}" name="Preventive_list" maxlength="100" class="textinput textInput form-control" required id="id_Preventive_list" /> </div> </div> </div>
+
+</div>
+<div class="Basic Details" style="padding-top:1px;padding-bottom:1px;background-color:#d8d8d8;"><h3 style="text-align:center;margin-top:10px;">Basic Details </h3></div> <br> <div  
+    class="row" > <div  
+    class="col-md-3" > <div id="div_id_Preventive_Name" class="form-group"> <label for="id_Preventive_Name" class="control-label  requiredField">
+                Preventive Name<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members.Preventive_Name }}" name="Preventive_Name" maxlength="100" class="textinput textInput form-control" required id="id_Preventive_Name" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Spare_Group" class="form-group"> <label for="id_Spare_Group" class="control-label  requiredField">
+                Spare Group<span class="asteriskField">*</span> </label> <div class="controls "> 
+                     <select name="Spare_Group" class="select form-control" required id="id_Spare_Group">
+                     <option value="Item1" {% if members.Spare_Group == "Item1"%}
+                     selected
+                     {% endif %}
+                     >Item1</option> 
+                     <option value="Item2"
+ {% if members.Spare_Group == "Item2"%}
+                     selected
+                     {% endif %}
+                     >
+                     Item2</option>
+
+</select> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Nature" class="form-group"> <label for="id_Nature" class="control-label  requiredField">
+                Nature<span class="asteriskField">*</span> </label> <div class="controls "> <select name="Nature" class="select form-control" required id="id_Nature"> 
+                <option value="Item1" {% if members.Spare_Group == "Item1"%} 
+                selected
+                 {% endif %}
+                >Item1</option>
+                <option value="Item2" {% if members.Spare_Group == "Item2"%} 
+                selected
+                 {% endif %}
+                >Item2</option>
+
+</select> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Description" class="form-group"> <label for="id_Description" class="control-label  requiredField">
+                Description<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members.Description }}" name="Description" maxlength="200" class="textinput textInput form-control" required id="id_Description" /> </div> </div> </div>
+
+</div>
+<!--         <div class="form-group">
+            <label for="firstname">Firstname</label>
+            <input type="text" name="firstname" value="{{ members.firstname }}" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Lastname</label>
+            <input type="text" name="lastname" value="{{ members.lastname }}" required="required"/>
+        </div> -->
+            {% if members %}
+    <div class="form-group">
+            <button type="submit" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
+        </div>
+        {% else %}
+        <button type="submit" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+    {% endif %}
+    </form>
+{% endblock %}

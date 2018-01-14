@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+</style>
+<h3 class="text-primary" style="text-align: center;">Jobsheet Registration</h3>
+<hr style="border-top:1px dotted #000;"/>
+<div class="container-fluid" style="text-align: center;">
+    <a class="btn btn-sm btn-primary" href="add/{{ member2.id }}">New Entry<span class="glyphicon glyphicon-plus" style="margin-left: 7px;"></span></a>
+</div>
+<hr style="border-top:1px dotted #000;"/>
+<table class="table table-bordered" id="example" class="display" cellspacing="0" width="100%">
+    <thead class="alert-warning" style="overflow-x:auto;">
+        <tr>
+            <th>Nature</th>
+            <th>Vehicle_No</th>
+            <th>JobSheet_No_List</th>
+            <th>Office_list</th>
+            <th>Type</th>
+            <th>In_Date</th>
+            <th>Expt_Date</th>
+            <th>Jobsheet_no</th>
+            <th>Completion_Date</th>
+            <th>Vehicle</th>
+            <th>Out_Date</th>
+            <th>Trailor</th>
+            <th>KM_Reading</th>
+            <th>Driver</th>
+            <th>Additional_KM</th>
+            <th>Owner</th>
+            <th>Tyre_Supervisor</th>
+            <th>Maintenance_Supervisor</th>
+            <th>Total_KM_Run</th>
+            <th>Remark</th>
+            <th>pendding_Remark</th>
+            <th>Store</th>
+            <th>Close_Date</th>
+            <th>JobSheet_No_List</th>
+            <th>InDate</th>
+            <th>OutDate</th>
+            <th>KM_Reading</th>
+            <th>Remarks</th>
+            <th>Completion_Remarks</th>
+            <th>Check_list_Template</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member2 in members2 %}
+        <tr>
+            <td>{{ member2.Nature }}</td>
+            <td>{{ member2.Vehicle_No }}</td>
+            <td>{{ member2.JobSheet_No_List }}</td>
+            <td>{{ member2.Office_list }}</td>
+            <td>{{ member2.Type }}</td>
+            <td>{{ member2.In_Date }}</td>
+            <td>{{ member2.Expt_Date }}</td>
+            <td>{{ member2.Jobsheet_no }}</td>
+            <td>{{ member2.Completion_Date }}</td>
+            <td>{{ member2.Vehicle }}</td>
+            <td>{{ member2.Out_Date }}</td>
+            <td>{{ member2.Trailor }}</td>
+            <td>{{ member2.KM_Reading }}</td>
+            <td>{{ member2.Driver }}</td>
+            <td>{{ member2.Additional_KM }}</td>
+            <td>{{ member2.Owner }}</td>
+            <td>{{ member2.Tyre_Supervisor }}</td>
+            <td>{{ member2.Maintenance_Supervisor }}</td>
+            <td>{{ member2.Total_KM_Run }}</td>
+            <td>{{ member2.Remark }}</td>
+            <td>{{ member2.pendding_Remark }}</td>
+            <td>{{ member2.Store }}</td>
+            <td>{{ member2.Close_Date }}</td>
+            <td>{{ member2.JobSheet_No_List1 }}</td>
+            <td>{{ member2.InDate }}</td>
+            <td>{{ member2.OutDate }}</td>
+            <td>{{ member2.KM_Reading1 }}</td>
+            <td>{{ member2.Remarks }}</td>
+            <td>{{ member2.Completion_Remarks }}</td>
+            <td>{{ member2.Check_list_Template }}</td>
+            <td><center><a class="btn btn-sm btn-warning" href="edit/{{ member2.id }}"><span class="glyphicon glyphicon-edit"></span></a> <a class="btn btn-sm btn-danger" href="delete/{{ member2.id }}"><span class="glyphicon glyphicon-trash"></span></a></center></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

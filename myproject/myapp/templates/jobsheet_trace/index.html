@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+<h3 class="text-primary" style="text-align: center;">Jobsheet Track Registration</h3>
+<hr style="border-top:1px dotted #000;"/>
+<div class="container" style="text-align: center;">
+	<a class="btn btn-sm btn-primary" href="add/{{ member2.id }}">New Entry<span class="glyphicon glyphicon-plus" style="margin-left: 7px;"></span></a>
+</div>
+<hr style="border-top:1px dotted #000;"/>
+<table class="table table-bordered" id="example" class="display" cellspacing="0" width="100%">
+    <thead class="alert-warning">
+        <tr>
+            <th>From_Date</th>
+            <th>To_Date</th>
+            <th>JobSheet_No</th>
+            <th>Vehicle_No</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member1 in members1 %}
+        <tr>
+            <td>{{ member1.From_Date }}</td>
+            <td>{{ member1.To_Date }}</td>
+            <td>{{ member1.JobSheet_No }}</td>
+            <td>{{ member1.Vehicle_No }}</td>
+            <td><center><a class="btn btn-sm btn-warning" href="edit/{{ member1.id }}"><span class="glyphicon glyphicon-edit"></span></a> <a class="btn btn-sm btn-danger" href="delete/{{ member1.id }}"><span class="glyphicon glyphicon-trash"></span></a></center></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

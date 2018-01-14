@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block body %}
+<h3 class="text-primary" style="text-align: center;">PM Chart Registration</h3>
+    <hr style="border-top:1px dotted #000;"/>
+    {% if members5 %}
+    <form method="POST" action="update/{{ members5.id }}">
+        {% else %}
+        <form class=""  action="create" method="POST">
+    {% endif %}
+        {% csrf_token %}
+<div  
+    class="row" > <div  
+    class="col-md-3" > <div id="div_id_SNo" class="form-group"> <label for="id_SNo" class="control-label  requiredField">
+                SNo<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members5.SNo }}" name="SNo" maxlength="50" class="textinput textInput form-control" required id="id_SNo" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Date" class="form-group"> <label for="id_Date" class="control-label  requiredField">
+                Date<span class="asteriskField">*</span> </label> <div class="controls "> <input type="date" value="{{ members5.Date|date:'Y-m-d' }}" name="Date" class="datepicker dateinput form-control" required id="id_Date" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Inactive_Date" class="form-group"> <label for="id_Inactive_Date" class="control-label  requiredField">
+                Inactive Date<span class="asteriskField">*</span> </label> <div class="controls "> <input type="date" value="{{ members5.Inactive_Date|date:'Y-m-d' }}" name="Inactive_Date" class="datepicker dateinput form-control" required id="id_Inactive_Date" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Class_Name" class="form-group"> <label for="id_Class_Name" class="control-label  requiredField">
+                Class Name<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members5.Class_Name }}" name="Class_Name" maxlength="100" class="textinput textInput form-control" required id="id_Class_Name" /> </div> </div> </div>
+
+</div>
+<div  
+    class="row" > <div  
+    class="col-md-3" > <div id="div_id_PM_Name" class="form-group"> <label for="id_PM_Name" class="control-label  requiredField">
+                PM Name<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members5.PM_Name }}" name="PM_Name" maxlength="100" class="textinput textInput form-control" required id="id_PM_Name" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Days" class="form-group"> <label for="id_Days" class="control-label  requiredField">
+                Days<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members5.Days }}" name="Days" maxlength="100" class="textinput textInput form-control" required id="id_Days" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_KM_Run" class="form-group"> <label for="id_KM_Run" class="control-label  requiredField">
+                KM Run<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members5.KM_Run }}" name="KM_Run" maxlength="100" class="textinput textInput form-control" required id="id_KM_Run" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_KM_Alert" class="form-group"> <label for="id_KM_Alert" class="control-label  requiredField">
+                KM Alert<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members5.KM_Alert }}" name="KM_Alert" maxlength="100" class="textinput textInput form-control" required id="id_KM_Alert" /> </div> </div> </div>
+
+</div>
+<div  
+    class="row" > <div  
+    class="col-md-3" > <div id="div_id_Map_Next_PM" class="form-group"> <label for="id_Map_Next_PM" class="control-label  requiredField">
+                Map Next PM<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members5.Map_Next_PM }}" name="Map_Next_PM" maxlength="100" class="textinput textInput form-control" required id="id_Map_Next_PM" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Remark" class="form-group"> <label for="id_Remark" class="control-label  requiredField">
+                Remark<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members5.Remark }}" name="Remark" maxlength="100" class="textinput textInput form-control" required id="id_Remark" /> </div> </div> </div>
+
+</div>
+<!--         <div class="form-group">
+            <label for="firstname">Firstname</label>
+            <input type="text" name="firstname" value="{{ members5.firstname }}" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Lastname</label>
+            <input type="text" name="lastname" value="{{ members.lastname }}" required="required"/>
+        </div> -->
+            {% if members5 %}
+    <div class="form-group">
+            <button type="submit" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
+        </div>
+        {% else %}
+        <button type="submit" class="btn btn-sm btn-primary">save<span class="glyphicon glyphicon-plus" style="margin-left: 7px;"></span></button>
+    {% endif %}
+    <a class="btn btn-sm btn-danger" href="../">Cancel<span class="glyphicon glyphicon-remove" style="margin-left: 7px;"></span></a>
+    </form>
+{% endblock %}

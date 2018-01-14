@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block body %}
+    {% if members1 %}
+    <form method="POST" action="update/{{ members1.id }}">
+        {% else %}
+        <form class=""  action="create" method="POST">
+    {% endif %}
+        {% csrf_token %}
+         <h3 class="text-primary" style="text-align: center;">Jobsheet Track Registration</h3>
+<hr style="border-top:1px dotted #000;"/>
+<div  
+    class="row" > <div  
+    class="col-md-3" > <div id="div_id_From_Date" class="form-group"> <label for="id_From_Date" class="control-label  requiredField">
+                From Date<span class="asteriskField">*</span> </label> <div class="controls "> <input type="date" value="{{ members1.From_Date|date:'Y-m-d' }}" name="From_Date" class="datepicker dateinput form-control" required id="id_From_Date" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_To_Date" class="form-group"> <label for="id_To_Date" class="control-label  requiredField">
+                To Date<span class="asteriskField">*</span> </label> <div class="controls "> <input type="date" value="{{ members1.To_Date|date:'Y-m-d' }}" name="To_Date" class="datepicker dateinput form-control" required id="id_To_Date" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_JobSheet_No" class="form-group"> <label for="id_JobSheet_No" class="control-label  requiredField">
+                JobSheet No<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members1.JobSheet_No }}" name="JobSheet_No" maxlength="100" class="textinput textInput form-control" required id="id_JobSheet_No" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Vehicle_No" class="form-group"> <label for="id_Vehicle_No" class="control-label  requiredField">
+                Vehicle No<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members1.Vehicle_No }}" name="Vehicle_No" maxlength="100" class="textinput textInput form-control" required id="id_Vehicle_No" /> </div> </div> </div>
+
+</div>
+<!--         <div class="form-group">
+            <label for="firstname">Firstname</label>
+            <input type="text" name="firstname" value="{{ members.firstname }}" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Lastname</label>
+            <input type="text" name="lastname" value="{{ members.lastname }}" required="required"/>
+        </div> -->
+            {% if members1 %}
+    <div class="form-group">
+            <button type="submit" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
+        </div>
+        {% else %}
+        <button type="submit" class="btn btn-sm btn-primary">Save<span class="glyphicon glyphicon-plus" style="margin-left: 7px;"></span></button>
+    {% endif %}
+    <a class="btn btn-sm btn-danger" href="../">Cancel<span class="glyphicon glyphicon-remove" style="margin-left: 7px;"></span></a>
+    </form>
+
+{% endblock %}

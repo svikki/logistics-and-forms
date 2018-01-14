@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+</style>
+<h3 class="text-primary" style="text-align: center;">Part Tracker Registration</h3>
+<hr style="border-top:1px dotted #000;"/>
+<div class="container" style="text-align: center;">
+    <a class="btn btn-sm btn-primary" href="add/{{ member2.id }}">New Entry<span class="glyphicon glyphicon-plus" style="margin-left: 7px;"></span></a>
+</div>
+<hr style="border-top:1px dotted #000;"/>
+<table class="table table-bordered" id="example" class="display" cellspacing="0" width="100%">
+    <thead class="alert-warning">
+        <tr>
+            <th>Type</th>
+            <th>SNo</th>
+            <th>Doc_No</th>
+            <th>Doc_Date</th>
+            <th>CR_AC</th>
+            <th>DR_AC</th>
+            <th>Status</th>
+            <th>Trail_Status</th>
+            <th>Card_No</th>
+            <th>Life</th>
+            <th>S</th>
+            <th>Vehicle_No</th>
+            <th>KM_Reading</th>
+            <th>KM_Run</th>
+            <th>Purchase_Cost</th>
+            <th>TP_Coast</th>
+            <th>Scrap_Cost</th>
+            <th>Est_Cost</th>
+            <th>Reason</th>    
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member4 in members4 %}
+        <tr>
+            <td>{{ member4.Type }}</td>
+            <td>{{ member4.SNo }}</td>
+            <td>{{ member4.Doc_No }}</td>
+            <td>{{ member4.Doc_Date }}</td>
+            <td>{{ member4.CR_AC }}</td>
+            <td>{{ member4.DR_AC }}</td>
+            <td>{{ member4.Status }}</td>
+            <td>{{ member4.Trail_Status }}</td>
+            <td>{{ member4.Card_No }}</td>
+            <td>{{ member4.Life }}</td>
+            <td>{{ member4.S }}</td>
+            <td>{{ member4.Vehicle_No }}</td>
+            <td>{{ member4.KM_Reading }}</td>
+            <td>{{ member4.KM_Run }}</td>
+            <td>{{ member4.Purchase_Cost }}</td>
+            <td>{{ member4.TP_Coast }}</td>
+            <td>{{ member4.Scrap_Cost }}</td>
+            <td>{{ member4.Est_Cost }}</td>
+            <td>{{ member4.Reason }}</td>
+            <td><center><a class="btn btn-sm btn-warning" href="edit/{{ member4.id }}"><span class="glyphicon glyphicon-edit"></span></a> <a class="btn btn-sm btn-danger" href="delete/{{ member4.id }}"><span class="glyphicon glyphicon-trash"></span></a></center></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

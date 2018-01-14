@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block body %}
+<h3 class="text-primary" style="text-align: center;">Repair Dashboard Registration</h3>
+<hr style="border-top:1px dotted #000;"/>
+<div class="container" style="text-align: center;">
+    <a class="btn btn-sm btn-primary" href="add">New Entry<span class="glyphicon glyphicon-plus" style="margin-left: 7px;"></span></a>
+</div>
+<hr style="border-top:1px dotted #000;"/>
+<table class="table table-bordered" id="example" class="display" cellspacing="0" width="100%">
+    <thead class="alert-warning">
+        <tr>
+            <th>Office</th>
+            <th>Vehicle_No Name</th>
+            <th>Jobsheet_no</th>
+            <th>InDate</th>
+            <th>Expected_Date</th>
+            <th>Vehicle_No1</th>
+            <th>Driver_Name</th>
+            <th>Supervisor_Name</th>
+            <th>OutDate</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member6 in members6 %}
+        <tr>
+            <td>{{ member6.Office }}</td>
+            <td>{{ member6.Vehicle_No }}</td>
+            <td>{{ member6.Jobsheet_no }}</td>
+            <td>{{ member6.InDate }}</td>
+            <td>{{ member6.Expected_Date }}</td>
+            <td>{{ member6.Vehicle_No1 }}</td>
+            <td>{{ member6.Driver_Name }}</td>
+            <td>{{ member6.Supervisor_Name }}</td>
+            <td>{{ member6.OutDate }}</td>
+            <td><center><a class="btn btn-sm btn-warning" href="edit/{{ member6.id }}"><span class="glyphicon glyphicon-edit"></span></a> <a class="btn btn-sm btn-danger" href="delete/{{ member6.id }}"><span class="glyphicon glyphicon-trash"></span></a></center></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

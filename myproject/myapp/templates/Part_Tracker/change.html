@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block body %}
+<h3 class="text-primary" style="text-align: center;">Part Tracker Registration</h3>
+    <hr style="border-top:1px dotted #000;"/>
+    {% if members4 %}
+    <form method="POST" action="update/{{ members4.id }}">
+        {% else %}
+        <form class=""  action="create" method="POST">
+    {% endif %}
+        {% csrf_token %}
+<div  
+    class="row" > <div  
+    class="col-md-3" > <div id="div_id_Type" class="form-group"> <label for="id_Type" class="control-label  requiredField">
+                Type<span class="asteriskField">*</span> </label> <div class="controls "> <select name="Type" class="select form-control" required id="id_Type"> <option value="Item1" {% if members4.Type == "Item1"%}
+                     selected
+                     {% endif %}
+                     >Item1</option> 
+                     <option value="Item2"
+ {% if members.Type == "Item2"%}
+                     selected
+                     {% endif %}
+                     >
+                     Item2</option>
+
+</select> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_SNo" class="form-group"> <label for="id_SNo" class="control-label  requiredField">
+                SNo<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.SNo }}" name="SNo" maxlength="100" class="textinput textInput form-control" required id="id_SNo" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Doc_No" class="form-group"> <label for="id_Doc_No" class="control-label  requiredField">
+                Doc No<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.Doc_No }}" name="Doc_No" maxlength="100" class="textinput textInput form-control" required id="id_Doc_No" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Doc_Date" class="form-group"> <label for="id_Doc_Date" class="control-label  requiredField">
+                Doc Date<span class="asteriskField">*</span> </label> <div class="controls "> <input type="date" value="{{ members4.Doc_Date|date:'Y-m-d' }}" name="Doc_Date" class="datepicker dateinput form-control" required id="id_Doc_Date" /> </div> </div> </div>
+
+</div>
+<div  
+    class="row" > <div  
+    class="col-md-3" > <div id="div_id_CR_AC" class="form-group"> <label for="id_CR_AC" class="control-label  requiredField">
+                CR AC<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.CR_AC }}" name="CR_AC" maxlength="100" class="textinput textInput form-control" required id="id_CR_AC" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_DR_AC" class="form-group"> <label for="id_DR_AC" class="control-label  requiredField">
+                DR AC<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.DR_AC }}" name="DR_AC" maxlength="100" class="textinput textInput form-control" required id="id_DR_AC" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Status" class="form-group"> <label for="id_Status" class="control-label  requiredField">
+                Status<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.Status }}" name="Status" maxlength="100" class="textinput textInput form-control" required id="id_Status" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Trail_Status" class="form-group"> <label for="id_Trail_Status" class="control-label  requiredField">
+                Trail Status<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.Trail_Status }}" name="Trail_Status" maxlength="100" class="textinput textInput form-control" required id="id_Trail_Status" /> </div> </div> </div>
+
+</div>
+<div  
+    class="row" > <div  
+    class="col-md-3" > <div id="div_id_Card_No" class="form-group"> <label for="id_Card_No" class="control-label  requiredField">
+                Card No<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.Card_No }}" name="Card_No" maxlength="100" class="textinput textInput form-control" required id="id_Card_No" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Life" class="form-group"> <label for="id_Life" class="control-label  requiredField">
+                Life<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.Life }}" name="Life" maxlength="100" class="textinput textInput form-control" required id="id_Life" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div class="form-group"> <div id="div_id_S" class="checkbox"> <label for="id_S" class=""> <input type="checkbox" name="S" class="checkboxinput" id="id_S" />
+                    S
+                </label> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Vehicle_No" class="form-group"> <label for="id_Vehicle_No" class="control-label  requiredField">
+                Vehicle No<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.Vehicle_No }}" name="Vehicle_No" maxlength="100" class="textinput textInput form-control" required id="id_Vehicle_No" /> </div> </div> </div>
+
+</div>
+<div  
+    class="row" > <div  
+    class="col-md-3" > <div id="div_id_KM_Reading" class="form-group"> <label for="id_KM_Reading" class="control-label  requiredField">
+                KM Reading<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.KM_Reading }}" name="KM_Reading" maxlength="100" class="textinput textInput form-control" required id="id_KM_Reading" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_KM_Run" class="form-group"> <label for="id_KM_Run" class="control-label  requiredField">
+                KM Run<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.KM_Run }}" name="KM_Run" maxlength="100" class="textinput textInput form-control" required id="id_KM_Run" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Purchase_Cost" class="form-group"> <label for="id_Purchase_Cost" class="control-label  requiredField">
+                Purchase Cost<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.Purchase_Cost }}" name="Purchase_Cost" maxlength="100" class="textinput textInput form-control" required id="id_Purchase_Cost" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_TP_Coast" class="form-group"> <label for="id_TP_Coast" class="control-label  requiredField">
+                TP Coast<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.TP_Coast }}" name="TP_Coast" maxlength="100" class="textinput textInput form-control" required id="id_TP_Coast" /> </div> </div> </div>
+
+</div>
+<div  
+    class="row" > <div  
+    class="col-md-3" > <div id="div_id_Scrap_Cost" class="form-group"> <label for="id_Scrap_Cost" class="control-label  requiredField">
+                Scrap Cost<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.Scrap_Cost }}" name="Scrap_Cost" maxlength="100" class="textinput textInput form-control" required id="id_Scrap_Cost" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Est_Cost" class="form-group"> <label for="id_Est_Cost" class="control-label  requiredField">
+                Est Cost<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.Est_Cost }}" name="Est_Cost" maxlength="100" class="textinput textInput form-control" required id="id_Est_Cost" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Reason" class="form-group"> <label for="id_Reason" class="control-label  requiredField">
+                Reason<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members4.Reason }}" name="Reason" maxlength="100" class="textinput textInput form-control" required id="id_Reason" /> </div> </div> </div>
+
+</div>
+<!--         <div class="form-group">
+            <label for="firstname">Firstname</label>
+            <input type="text" name="firstname" value="{{ members4.firstname }}" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Lastname</label>
+            <input type="text" name="lastname" value="{{ members.lastname }}" required="required"/>
+        </div> -->
+            {% if members4 %}
+    <div class="form-group">
+            <button type="submit" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
+        </div>
+        {% else %}
+        <button type="submit" class="btn btn-sm btn-primary">save<span class="glyphicon glyphicon-plus" style="margin-left: 7px;"></span></button>
+    {% endif %}
+    <a class="btn btn-sm btn-danger" href="../">Cancel<span class="glyphicon glyphicon-remove" style="margin-left: 7px;"></span></a>
+    </form>
+{% endblock %}

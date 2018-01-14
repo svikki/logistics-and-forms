@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+<h3 class="text-primary" style="text-align: center;">PM Master Registration</h3>
+<hr style="border-top:1px dotted #000;"/>
+<table class="table table-bordered" id="example" class="display" cellspacing="0" width="100%">
+    <thead class="alert-warning">
+        <tr>
+            <th>Preventive list</th>
+            <th>Preventive Name</th>
+            <th>Spare Group</th>
+            <th>Nature</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member in members %}
+        <tr>
+            <td>{{ member.Preventive_list }}</td>
+            <td>{{ member.Preventive_Name }}</td>
+            <td>{{ member.Spare_Group }}</td>
+            <td>{{ member.Nature }}</td>
+            <td>{{ member.Description }}</td>
+            <td><center><a class="btn btn-sm btn-warning" href="edit/{{ member.id }}"><span class="glyphicon glyphicon-edit"></span></a> <a class="btn btn-sm btn-danger" href="delete/{{ member.id }}"><span class="glyphicon glyphicon-trash"></span></a></center></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

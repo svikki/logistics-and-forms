@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+</style>
+<h3 class="text-primary" style="text-align: center;">OMR Registration</h3>
+<hr style="border-top:1px dotted #000;"/>
+<table class="table table-bordered" id="example" class="display" cellspacing="0" width="100%">
+    <thead class="alert-warning" style="overflow-x:auto;">
+        <tr>
+            <th>Vehicle_No</th>
+            <th>OMR_No_List</th>
+            <th>Office_list</th>
+            <th>Date</th>
+            <th>OMR_No</th>
+            <th>ORM_Type</th>
+            <th>Spare_Group</th>
+            <th>Completion_Date</th>
+            <th>ORM_Nature</th>
+            <th>Vehicle_No</th>
+            <th>Driver</th>
+            <th>Place</th>
+            <th>Supervisor</th>
+            <th>On_Road_Date</th>
+            <th>Trip_Detail</th>
+            <th>Approx_Amount</th>
+            <th>Remarks</th>
+            <th>Comment</th>
+            <th>Varification_Date</th>
+            <th>Verified_By</th>
+            <th>Varification_Remarks</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member3 in members3 %}
+        <tr>
+            <td>{{ member3.Vehicle_No }}</td>
+            <td>{{ member3.OMR_No_List }}</td>
+            <td>{{ member3.Office_list }}</td>
+            <td>{{ member3.Date }}</td>
+            <td>{{ member3.OMR_No }}</td>
+            <td>{{ member3.ORM_Type }}</td>
+            <td>{{ member3.Spare_Group }}</td>
+            <td>{{ member3.Completion_Date }}</td>
+            <td>{{ member3.ORM_Nature }}</td>
+            <td>{{ member3.Vehicle_No1 }}</td>
+            <td>{{ member3.Driver }}</td>
+            <td>{{ member3.Place }}</td>
+            <td>{{ member3.Supervisor }}</td>
+            <td>{{ member3.On_Road_Date }}</td>
+            <td>{{ member3.Trip_Detail }}</td>
+            <td>{{ member3.Approx_Amount }}</td>
+            <td>{{ member3.Remarks }}</td>
+            <td>{{ member3.Comment }}</td>
+            <td>{{ member3.Varification_Date }}</td>
+            <td>{{ member3.Verified_By }}</td>
+            <td>{{ member3.Varification_Remarks }}</td>
+            <td><center><a class="btn btn-sm btn-warning" href="edit/{{ member3.id }}"><span class="glyphicon glyphicon-edit"></span></a> 
+                <a class="btn btn-sm btn-danger" href="delete/{{ member3.id }}"><span class="glyphicon glyphicon-trash"></span></a></center></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

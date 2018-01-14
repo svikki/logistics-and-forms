@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block body %}
+    {% if members3 %}
+    <form method="POST" action="update/{{ members2.id }}">
+        {% else %}
+        <form   action="create" method="POST">
+    {% endif %}
+        {% csrf_token %}
+<div  
+    class="row" > <div  
+    class="col-md-6" > <div id="div_id_Vehicle_No" class="form-group"> <label for="id_Vehicle_No" class="control-label  requiredField">
+                Vehicle No<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.Vehicle_No }}" name="Vehicle_No" maxlength="50" class="textinput textInput form-control" required id="id_Vehicle_No" /> </div> </div> </div>
+<div  
+    class="col-md-6" > <div id="div_id_OMR_No_List" class="form-group"> <label for="id_OMR_No_List" class="control-label  requiredField">
+                OMR No List<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.OMR_No_List }}" name="OMR_No_List" maxlength="100" class="textinput textInput form-control" required id="id_OMR_No_List" /> </div> </div> </div>
+
+</div>
+<div class="Basic Details" style="padding-top:1px;padding-bottom:1px;background-color:#d8d8d8;"><h3 style="text-align:center;margin-top:10px;">Basic Details </h3></div> <br> <div  
+    class="row" > <div  
+    class="col-md-3" > <div id="div_id_Office_list" class="form-group"> <label for="id_Office_list" class="control-label  requiredField">
+                Office list<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.Office_list }}" name="Office_list" maxlength="100" class="textinput textInput form-control" required id="id_Office_list" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Date" class="form-group"> <label for="id_Date" class="control-label  requiredField">
+                Date<span class="asteriskField">*</span> </label> <div class="controls "> <input type="date" value="{{ members3.Date }}" name="Date" class="datepicker dateinput form-control" required id="id_Date" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_OMR_No" class="form-group"> <label for="id_OMR_No" class="control-label  requiredField">
+                OMR No<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.OMR_No }}" name="OMR_No" maxlength="100" class="textinput textInput form-control" required id="id_OMR_No" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_ORM_Type" class="form-group"> <label for="id_ORM_Type" class="control-label  requiredField">
+                ORM Type<span class="asteriskField">*</span> </label> <div class="controls "> <select name="ORM_Type" class="select form-control" required id="id_ORM_Type"> 
+                     <option value="Item1" {% if members3.ORM_Type == "Item1"%}
+                     selected
+                     {% endif %}
+                     >Item1</option> 
+                     <option value="Item2"
+ {% if members3.ORM_Type == "Item2"%}
+                     selected
+                     {% endif %}
+                     >
+                     Item2</option>
+
+</select> </div> </div> </div>
+
+</div>
+<div  
+    class="row" > <div  
+    class="col-md-3" > <div id="div_id_Spare_Group" class="form-group"> <label for="id_Spare_Group" class="control-label  requiredField">
+                Spare Group<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.Spare_Group }}" name="Spare_Group" maxlength="100" class="textinput textInput form-control" required id="id_Spare_Group" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Completion_Date" class="form-group"> <label for="id_Completion_Date" class="control-label  requiredField">
+                Completion Date<span class="asteriskField">*</span> </label> <div class="controls "> <input type="date" value="{{ members3.Completion_Date }}" name="Completion_Date" class="datepicker dateinput form-control" required id="id_Completion_Date" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_ORM_Nature" class="form-group"> <label for="id_ORM_Nature" class="control-label  requiredField">
+                ORM Nature<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.ORM_Nature }}" name="ORM_Nature" maxlength="100" class="textinput textInput form-control" required id="id_ORM_Nature" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Vehicle_No1" class="form-group"> <label for="id_Vehicle_No1" class="control-label  requiredField">
+                Vehicle No<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.Vehicle_No1 }}" name="Vehicle_No1" maxlength="100" class="textinput textInput form-control" required id="id_Vehicle_No1" /> </div> </div> </div>
+
+</div>
+<div  
+    class="row" > <div  
+    class="col-md-3" > <div id="div_id_Driver" class="form-group"> <label for="id_Driver" class="control-label  requiredField">
+                Driver<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.Driver }}" name="Driver" maxlength="100" class="textinput textInput form-control" required id="id_Driver" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Place" class="form-group"> <label for="id_Place" class="control-label  requiredField">
+                Place<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.Place }}" name="Place" maxlength="100" class="textinput textInput form-control" required id="id_Place" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Supervisor" class="form-group"> <label for="id_Supervisor" class="control-label  requiredField">
+                Supervisor<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.Supervisor }}" name="Supervisor" maxlength="100" class="textinput textInput form-control" required id="id_Supervisor" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_On_Road_Date" class="form-group"> <label for="id_On_Road_Date" class="control-label  requiredField">
+                On Road Date<span class="asteriskField">*</span> </label> <div class="controls "> <input type="date" value="{{ members3.On_Road_Date }}" name="On_Road_Date" class="datepicker dateinput form-control" required id="id_On_Road_Date" /> </div> </div> </div>
+
+</div>
+<div  
+    class="row" > <div  
+    class="col-md-3" > <div id="div_id_Trip_Detail" class="form-group"> <label for="id_Trip_Detail" class="control-label  requiredField">
+                Trip Detail<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.Trip_Detail }}" name="Trip_Detail" maxlength="100" class="textinput textInput form-control" required id="id_Trip_Detail" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Approx_Amount" class="form-group"> <label for="id_Approx_Amount" class="control-label  requiredField">
+                Approx Amount<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.Approx_Amount }}" name="Approx_Amount" maxlength="100" class="textinput textInput form-control" required id="id_Approx_Amount" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Remarks" class="form-group"> <label for="id_Remarks" class="control-label  requiredField">
+                Remarks<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.Remarks }}" name="Remarks" maxlength="100" class="textinput textInput form-control" required id="id_Remarks" /> </div> </div> </div>
+<div  
+    class="col-md-3" > <div id="div_id_Comment" class="form-group"> <label for="id_Comment" class="control-label  requiredField">
+                Comment<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.Comment }}" name="Comment" maxlength="100" class="textinput textInput form-control" required id="id_Comment" /> </div> </div> </div>
+
+</div>
+
+<div class=" Details" style="padding-top:1px;padding-bottom:1px;background-color:#d8d8d8;"><h3 style="text-align:center;margin-top:10px;">Verification Details </h3></div> <br> <div  
+    class="row" > <div  
+    class="col-md-4" > <div id="div_id_Varification_Date" class="form-group"> <label for="id_Varification_Date" class="control-label  requiredField">
+                Varification Date<span class="asteriskField">*</span> </label> <div class="controls "> <input type="date" value="{{ members3.Varification_Date }}" name="Varification_Date" class="datepicker dateinput form-control" required id="id_Varification_Date" /> </div> </div> </div>
+<div  
+    class="col-md-4" > <div id="div_id_Verified_By" class="form-group"> <label for="id_Verified_By" class="control-label  requiredField">
+                Verified By<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.Verified_By }}" name="Verified_By" maxlength="100" class="textinput textInput form-control" required id="id_Verified_By" /> </div> </div> </div>
+<div  
+    class="col-md-4" > <div id="div_id_Varification_Remarks" class="form-group"> <label for="id_Varification_Remarks" class="control-label  requiredField">
+                Varification Remarks<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members3.Varification_Remarks }}" name="Varification_Remarks" maxlength="100" class="textinput textInput form-control" required id="id_Varification_Remarks" /> </div> </div> </div>
+
+</div>
+<!--         <div class="form-group">
+            <label for="firstname">Firstname</label>
+            <input type="text" name="firstname" value="{{ members3.firstname }}" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Lastname</label>
+            <input type="text" name="lastname" value="{{ members.lastname }}" required="required"/>
+        </div> -->
+            {% if members3 %}
+    <div class="form-group">
+            <button type="submit" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
+        </div>
+        {% else %}
+        <button type="submit" class="btn btn-sm btn-primary">Save<span class="glyphicon glyphicon-plus" style="margin-left: 7px;"></span></button>
+    {% endif %}
+    </form>
+{% endblock %}

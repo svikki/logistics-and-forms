@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+</style>
+<h3 class="text-primary" style="text-align: center;">Repair Consume Registration</h3>
+<hr style="border-top:1px dotted #000;"/>
+<div class="container" style="text-align: center;">
+    <a class="btn btn-sm btn-primary" href="add">New Entry<span class="glyphicon glyphicon-plus" style="margin-left: 7px;"></span></a>
+</div>
+<hr style="border-top:1px dotted #000;"/>
+<table class="table table-bordered" id="example" class="display" cellspacing="0" width="100%">
+    <thead class="alert-warning" style="overflow-x:auto;">
+        <tr>
+            <th>Nature</th>
+            <th>Vehicle_No1</th>
+            <th>Supplier</th>
+            <th>Consume_Search</th>
+            <th>Office</th>
+            <th>Supplier1</th>
+            <th>PO_Type</th>
+            <th>Narration</th>
+            <th>Document_Date</th>
+            <th>Voucher_Date</th>
+            <th>Document_No</th>
+            <th>Vendor_No</th>
+            <th>Vehicle_No</th>
+            <th>Expense_AC</th>
+            <th>Ref</th>
+            <th>Labour_Code</th>
+            <th>Labour_Qty</th>
+            <th>Labour_Rate</th>
+            <th>Labour_Amount</th>
+            <th>DoneBy</th>
+            <th>Labour_Remark</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member7 in members7 %}
+        <tr>
+            <td>{{ member3.Nature }}</td>
+            <td>{{ member3.Vehicle_No1 }}</td>
+            <td>{{ member3.Supplier }}</td>
+            <td>{{ member3.Consume_Search }}</td>
+            <td>{{ member3.Office }}</td>
+            <td>{{ member3.Supplier1 }}</td>
+            <td>{{ member3.PO_Type }}</td>
+            <td>{{ member3.Narration }}</td>
+            <td>{{ member3.Document_Date }}</td>
+            <td>{{ member3.Voucher_Date }}</td>
+            <td>{{ member3.Document_No }}</td>
+            <td>{{ member3.Vendor_No }}</td>
+            <td>{{ member3.Vehicle_No }}</td>
+            <td>{{ member3.Expense_AC }}</td>
+            <td>{{ member3.Ref }}</td>
+            <td>{{ member3.Labour_Code }}</td>
+            <td>{{ member3.Labour_Qty }}</td>
+            <td>{{ member3.Labour_Rate }}</td>
+            <td>{{ member3.Labour_Amount }}</td>
+            <td>{{ member3.DoneBy }}</td>
+            <td>{{ member3.Labour_Remark }}</td>
+            <td><center><a class="btn btn-sm btn-warning" href="edit/{{ member7.id }}"><span class="glyphicon glyphicon-edit"></span></a> 
+                <a class="btn btn-sm btn-danger" href="delete/{{ member7.id }}"><span class="glyphicon glyphicon-trash"></span></a></center></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

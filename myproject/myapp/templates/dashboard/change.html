@@ -1,0 +1,55 @@
+    {% extends 'base.html' %}
+    {% block body %}
+        {% if members6 %}
+        <h3 class="text-primary" style="text-align: center;">Repair Dashboard Registration</h3>
+    <hr style="border-top:1px dotted #000;"/>
+        <form method="POST" action="update/{{ members6.id }}">
+            {% else %}
+            <form class=""  action="create" method="POST">
+        {% endif %}
+            {% csrf_token %}
+            <div  
+        class="row" > <div  
+        class="col-md-6" > <div id="div_id_Office" class="form-group"> <label for="id_Office" class="control-label  requiredField">
+                    Office<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members6.Office }}" name="Office" maxlength="100" class="textinput textInput form-control" required id="id_Office" /> </div> </div> </div>
+    <div  
+        class="col-md-6" > <div id="div_id_Vehicle_No" class="form-group"> <label for="id_Vehicle_No" class="control-label  requiredField">
+                    Vehicle No<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members6.Vehicle_No }}" name="Vehicle_No" maxlength="100" class="textinput textInput form-control" required id="id_Vehicle_No" /> </div> </div> </div>
+
+    </div>
+    <div class="Basic Details" style="padding-top:1px;padding-bottom:1px;background-color:#d8d8d8;"><h3 style="text-align:center;margin-top:10px;">Basic Details </h3></div> <br> <div  
+        class="row" > <div  
+        class="col-md-3" > <div id="div_id_Jobsheet_no" class="form-group"> <label for="id_Jobsheet_no" class="control-label  requiredField">
+                    Jobsheet no<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members6.Jobsheet_no }}" name="Jobsheet_no" maxlength="100" class="textinput textInput form-control" required id="id_Jobsheet_no" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_InDate" class="form-group"> <label for="id_InDate" class="control-label  requiredField">
+                    InDate<span class="asteriskField">*</span> </label> <div class="controls "> <input type="date" value="{{ members6.InDate|date:'Y-m-d' }}" name="InDate" class="datepicker dateinput form-control" required id="id_InDate" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Expected_Date" class="form-group"> <label for="id_Expected_Date" class="control-label  requiredField">
+                    Expected Date<span class="asteriskField">*</span> </label> <div class="controls "> <input type="date" value="{{ members6.Expected_Date|date:'Y-m-d' }}" name="Expected_Date" class="datepicker dateinput form-control" required id="id_Expected_Date" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Vehicle_No1" class="form-group"> <label for="id_Vehicle_No1" class="control-label  requiredField">
+                    Vehicle No<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members6.Vehicle_No1 }}" name="Vehicle_No1" maxlength="200" class="textinput textInput form-control" required id="id_Vehicle_No1" /> </div> </div> </div>
+
+    </div>
+    <div  
+        class="row" > <div  
+        class="col-md-3" > <div id="div_id_Driver_Name" class="form-group"> <label for="id_Driver_Name" class="control-label  requiredField">
+                    Driver Name<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members6.Driver_Name }}" name="Driver_Name" maxlength="100" class="textinput textInput form-control" required id="id_Driver_Name" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Supervisor_Name" class="form-group"> <label for="id_Supervisor_Name" class="control-label  requiredField">
+                    Supervisor Name<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members6.Supervisor_Name }}" name="Supervisor_Name" maxlength="100" class="textinput textInput form-control" required id="id_Supervisor_Name" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_OutDate" class="form-group"> <label for="id_OutDate" class="control-label  requiredField">
+                    OutDate<span class="asteriskField">*</span> </label> <div class="controls "> <input type="date" value="{{ members6.OutDate|date:'Y-m-d' }}" name="OutDate" class="datepicker dateinput form-control" required id="id_OutDate" /> </div> </div> </div>
+
+    </div>
+                {% if members6 %}
+        <div class="form-group">
+                <button type="submit" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
+            </div>
+            {% else %}
+            <button type="submit" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+        {% endif %}
+        </form>
+    {% endblock %}

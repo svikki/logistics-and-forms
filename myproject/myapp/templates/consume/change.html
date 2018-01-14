@@ -1,0 +1,137 @@
+    {% extends 'base.html' %}
+    {% block body %}
+    <h3 class="text-primary" style="text-align: center;">Repair Consume Registration</h3>
+<hr style="border-top:1px dotted #000;"/>
+        {% if members7 %}
+        <form method="POST" action="update/{{ members7.id }}">
+            {% else %}
+            <form   action="create" method="POST">
+        {% endif %}
+            {% csrf_token %}
+    <div  
+        class="row" > <div  
+        class="col-md-3" > <div id="div_id_Nature" class="form-group"> <label for="id_Nature" class="control-label  requiredField">
+                    Nature<span class="asteriskField">*</span> </label> <div class="controls "> <select name="Nature" class="select form-control" required id="id_Nature">
+                        <option value="Item1" {% if members7.Nature == "Item1"%}
+                     selected
+                     {% endif %}
+                     >Item1</option> 
+                     <option value="Item2"
+ {% if members7.Nature == "Item2"%}
+                     selected
+                     {% endif %}
+                     >
+                     Item2</option>
+
+    </select> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Vehicle_No1" class="form-group"> <label for="id_Vehicle_No" class="control-label  requiredField">
+                    Vehicle No<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Vehicle_No1 }}" name="Vehicle_No1" maxlength="100" class="textinput textInput form-control" required id="id_Vehicle_No1" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Supplier" class="form-group"> <label for="id_Supplier" class="control-label  requiredField">
+                    Supplier<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Supplier }}" name="Supplier" maxlength="100" class="textinput textInput form-control" required id="id_Supplier" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Consume_Search" class="form-group"> <label for="id_Consume_Search" class="control-label  requiredField">
+                    Consume Search<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Consume_Search }}" name="Consume_Search" maxlength="100" class="textinput textInput form-control" required id="id_Consume_Search" /> </div> </div> </div>
+
+    </div>
+    <div class="Basic Details" style="padding-top:1px;padding-bottom:1px;background-color:#d8d8d8;"><h3 style="text-align:center;margin-top:10px;">Basic Details </h3></div> <br> <div  
+        class="row" > <div  
+        class="col-md-3" > <div id="div_id_Office" class="form-group"> <label for="id_Office" class="control-label  requiredField">
+                    Office<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Office }}" name="Office" maxlength="100" class="textinput textInput form-control" required id="id_Office" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Supplier1" class="form-group"> <label for="id_Supplier1" class="control-label  requiredField">
+                    Supplier<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Supplier1 }}" name="Supplier1" maxlength="200" class="textinput textInput form-control" required id="id_Supplier1" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_PO_Type" class="form-group"> <label for="id_PO_Type" class="control-label  requiredField">
+                    PO Type<span class="asteriskField">*</span> </label> <div class="controls "> <select name="PO_Type" class="select form-control" required id="id_PO_Type"> 
+                     <option value="Item1" {% if members7.PO_Type == "Item1"%}
+                     selected
+                     {% endif %}
+                     >Item1</option> 
+                     <option value="Item2"
+ {% if members7.PO_Type == "Item2"%}
+                     selected
+                     {% endif %}
+                     >
+                     Item2</option>
+
+    </select> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Narration" class="form-group"> <label for="id_Narration" class="control-label  requiredField">
+                    Narration<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Narration }}" name="Narration" maxlength="100" class="textinput textInput form-control" required id="id_Narration" /> </div> </div> </div>
+
+    </div>
+    <div  
+        class="row" > <div  
+        class="col-md-3" > <div id="div_id_Document_Date" class="form-group"> <label for="id_Document_Date" class="control-label  requiredField">
+                    Document Date<span class="asteriskField">*</span> </label> <div class="controls "> <input type="date" value="{{ members7.Document_Date|date:'Y-m-d' }}" name="Document_Date" class="datepicker dateinput form-control" required id="id_Document_Date" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Voucher_Date" class="form-group"> <label for="id_Voucher_Date" class="control-label  requiredField">
+                    Voucher Date<span class="asteriskField">*</span> </label> <div class="controls "> <input type="date" value="{{ members7.Voucher_Date|date:'Y-m-d' }}" name="Voucher_Date" class="datepicker dateinput form-control" required id="id_Voucher_Date" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Document_No" class="form-group"> <label for="id_Document_No" class="control-label  requiredField">
+                    Document No<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Document_No }}" name="Document_No" maxlength="100" class="textinput textInput form-control" required id="id_Document_No" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Vendor_No" class="form-group"> <label for="id_Vendor_No" class="control-label  requiredField">
+                    Vendor No<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Vendor_No }}" name="Vendor_No" maxlength="100" class="textinput textInput form-control" required id="id_Vendor_No" /> </div> </div> </div>
+
+    </div>
+    <div  
+        class="row" > <div  
+        class="col-md-3" > <div id="div_id_Vehicle_No" class="form-group"> <label for="id_Vehicle_No" class="control-label  requiredField">
+                    Vehicle No<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Vehicle_No }}" name="Vehicle_No" maxlength="100" class="textinput textInput form-control form-control" required id="id_Vehicle_No" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Expense_AC" class="form-group"> <label for="id_Expense_AC" class="control-label  requiredField">
+                    Expense AC<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Expense_AC }}" name="Expense_AC" maxlength="100" class="textinput textInput form-control" required id="id_Expense_AC" /> </div> </div> </div>
+
+    </div>
+    <div class=" Details" style="padding-top:1px;padding-bottom:1px;background-color:#d8d8d8;"><h3 style="text-align:center;margin-top:10px;">Labour Details </h3></div> <br> <div  
+        class="row" > <div  
+        class="col-md-3" > <div id="div_id_Ref" class="form-group"> <label for="id_Ref" class="control-label  requiredField">
+                    Ref / PONo<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Ref }}" name="Ref" maxlength="100" class="textinput textInput form-control" required id="id_Ref" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Labour_Code" class="form-group"> <label for="id_Labour_Code" class="control-label  requiredField">
+                    Labour Code<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Labour_Code }}" name="Labour_Code" maxlength="100" class="textinput textInput form-control" required id="id_Labour_Code" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Labour_Qty" class="form-group"> <label for="id_Labour_Qty" class="control-label  requiredField">
+                    Labour Qty<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Labour_Qty }}" name="Labour_Qty" maxlength="100" class="textinput textInput form-control" required id="id_Labour_Qty" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Labour_Rate" class="form-group"> <label for="id_Labour_Rate" class="control-label  requiredField">
+                    Labour Rate<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Labour_Rate }}" name="Labour_Rate" maxlength="100" class="textinput textInput form-control" required id="id_Labour_Rate" /> </div> </div> </div>
+
+    </div>
+    <div  
+        class="row" > <div  
+        class="col-md-3" > <div id="div_id_Labour_Amount" class="form-group"> <label for="id_Labour_Amount" class="control-label  requiredField">
+                    Labour Amount<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Labour_Amount }}" name="Labour_Amount" maxlength="100" class="textinput textInput form-control" required id="id_Labour_Amount" /> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_DoneBy" class="form-group"> <label for="id_DoneBy" class="control-label  requiredField">
+                    DoneBy<span class="asteriskField">*</span> </label> <div class="controls "> <select name="DoneBy" class="select form-control" required id="id_DoneBy"> 
+                        <option value="Item1" {% if members7.DoneBy == "Item1"%}
+                     selected
+                     {% endif %}
+                     >Item1</option> 
+                     <option value="Item2"
+ {% if members7.DoneBy == "Item2"%}
+                     selected
+                     {% endif %}
+                     >
+                     Item2</option>
+
+    </select> </div> </div> </div>
+    <div  
+        class="col-md-3" > <div id="div_id_Labour_Remark" class="form-group"> <label for="id_Labour_Remark" class="control-label  requiredField">
+                    Labour Remark<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" value="{{ members7.Labour_Remark }}" name="Labour_Remark" maxlength="100" class="textinput textInput form-control" required id="id_Labour_Remark" /> </div> </div> </div>
+
+    </div>
+                {% if members7 %}
+        <div class="form-group">
+                <button type="submit" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-edit"></span></button>
+            </div>
+            {% else %}
+            <button type="submit" class="btn btn-sm btn-primary">Save<span class="glyphicon glyphicon-plus" style="margin-left: 7px;"></span></button>
+        {% endif %}
+        <a class="btn btn-sm btn-danger" href="../">Cancel<span class="glyphicon glyphicon-remove" style="margin-left: 7px;"></span></a>
+        </form>
+    {% endblock %}
